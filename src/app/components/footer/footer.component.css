@@ -1,0 +1,25 @@
+.footer {
+    background-color: #2c3e50;
+    /* Dark blue theme */
+    color: #ecf0f1;
+    padding: 30px 0;
+    margin-top: auto;
+    /* Pushes footer to bottom if flex container used */
+    width: 100%;
+    position: relative;
+    border-top: 4px solid #e67e22;
+    /* Orange accent */
+}
+
+.footer-content {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.highlight {
+    color: #e67e22;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+}

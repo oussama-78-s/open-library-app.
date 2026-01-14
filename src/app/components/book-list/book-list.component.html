@@ -1,0 +1,20 @@
+<div class="book-list-container">
+    <h2>Liste des livres</h2>
+    <div class="books-grid">
+        @for (book of booksList; track book.key) {
+        <a class="book-card" [routerLink]="['/book', getBookId(book.key)]"
+            [queryParams]="{year: book.first_publish_year, cover: book.cover_id}">
+            <div class="book-cover">
+                <img [src]="getCoverUrl(book.cover_id)" [alt]="book.title"
+                    onerror="this.src='https://via.placeholder.com/180x270?text=No+Cover'">
+            </div>
+            <div class="book-info">
+                <h3 class="book-title">{{ book.title }}</h3>
+                <p class="book-year" *ngIf="book.first_publish_year">
+                    Publié en {{ book.first_publish_year }}
+                </p>
+            </div>
+        </a>
+        }
+    </div>
+</div>

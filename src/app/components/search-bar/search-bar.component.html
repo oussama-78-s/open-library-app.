@@ -1,0 +1,17 @@
+<div class="search-container">
+    <!-- Recherche par titre -->
+    <div class="search">
+        <input type="text" placeholder="Rechercher par titre..." #searchTitle>
+        <button (click)="searchByTitle(searchTitle.value)">
+            <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+        </button>
+    </div>
+
+    <!-- Recherche par année -->
+    <div class="search">
+        <input type="number" placeholder="Rechercher par année..." #searchYear>
+        <button (click)="searchByYear(searchYear.value)">
+            <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+        </button>
+    </div>
+</div>

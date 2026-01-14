@@ -1,0 +1,35 @@
+<div class="book-details-container" *ngIf="book">
+    <a routerLink="/" class="back-btn">← Retour à la liste</a>
+
+    <div class="book-content">
+        <div class="book-cover">
+            <img [src]="getCoverUrl()" [alt]="book.title">
+        </div>
+
+        <div class="book-info">
+            <h1 class="book-title">{{ book.title }}</h1>
+
+            <p class="book-subtitle" *ngIf="book.subtitle">
+                {{ book.subtitle }}
+            </p>
+
+            <div class="book-meta">
+                <span class="year" *ngIf="publishYear">
+                    📅 Année de première édition : {{ publishYear }}
+                </span>
+                <span class="year" *ngIf="book.first_publish_date && !publishYear">
+                    📅 Date de publication : {{ book.first_publish_date }}
+                </span>
+            </div>
+
+            <div class="book-description" *ngIf="getDescription()">
+                <h3>Description</h3>
+                <p>{{ getDescription() }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loading" *ngIf="!book">
+    <p>Chargement des détails du livre...</p>
+</div>
